@@ -1,11 +1,4 @@
-from flask import Flask
+from sboard import create_app
 import config
-
-app = Flask(__name__)
-
-@app.route('/')
-def hello():
-    return 'Hello, Flask'
-
 if __name__ == "__main__":
-    app.run(host="localhost", port=config.PORT, debug=config.DEBUG_MODE)
+    create_app().run(host="localhost", port=config.PORT, debug=config.DEBUG_MODE)
